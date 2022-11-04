@@ -40,8 +40,9 @@ function makeWork(arrOfArr, func) {
   
   // for ...
   for (let i = 0; i < arrOfArr.length; i++) {
-    if (func(arrOfArr[i]) > max) {
-      max = func(arrOfArr[i]);
+    const funcResult = func(arrOfArr[i]);
+    if (funcResult > max) {
+      max = funcResult;;
     }
   }
   
@@ -52,7 +53,6 @@ function makeWork(arrOfArr, func) {
 function worker2(arr) {
   let min = Math.abs(arr[0]);
   let max = Math.abs(arr[0]);
-  let difference = 0;
   // Ваш код
   for (let i = 0; i < arr.length; i++) {
     if (Math.abs(arr[i]) > max) {
@@ -60,7 +60,6 @@ function worker2(arr) {
     } else if (Math.abs(arr[i]) < min) {
       min = Math.abs(arr[i]);
     }
-    difference = max - min;
   }
-  return difference;
+  return max - min;;
 }
