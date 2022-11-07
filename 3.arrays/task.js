@@ -2,17 +2,8 @@ function compareArrays(arr1, arr2) {
   let result;
 
   // Ваш код
-  if (arr1.length != arr2.length) {
-    result = false;
-  } 
-  for(var i = 0; i < arr1.length; i++) {
-    if (arr1[i] !== arr2[i]) {
-      result = false; 
-    } else if (arr1.length === arr2.length && arr1[i] === arr2[i]) {
-      result = true;
-    }
-  return result; 
-  }
+  result = arr1.length === arr2.length && arr1.every((value, index) => value === arr2[index])
+  return result;
 }
 
 function advancedFilter(arr) {
@@ -23,3 +14,5 @@ function advancedFilter(arr) {
 
   return resultArr; // array
 }
+
+//var isEqual = first.length === second.length && first.every((value, index) => value === second[index])
