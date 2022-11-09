@@ -24,12 +24,16 @@ Student.prototype.addMark = function (mark) {
 }
 
 Student.prototype.addMarks = function (...mark) {
-  this.marks = [...mark];
+  if ( this.marks === undefined) {
+    this.marks = [...mark]; 
+    } else {
+    this.marks.push(...mark);
+    }
 }
 
 Student.prototype.getAverage = function () {
   let sum = 0;
-  for (i = 0; i < this.marks.length; i++) {
+  for (let i = 0; i < this.marks.length; i++) {
     sum += this.marks[i];
   }
   return sum / this.marks.length;
