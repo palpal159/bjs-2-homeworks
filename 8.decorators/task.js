@@ -35,6 +35,7 @@ function debounceDecoratorNew(func, delay) {
       func(...args);
       wrapper.count++;
     }, delay);
+    
   }
   wrapper.count = 0;
   wrapper.allCount = 0;
